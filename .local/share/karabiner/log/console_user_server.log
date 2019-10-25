@@ -1,9 +1,0 @@
-[2019-10-13 01:07:00.618] [info] [console_user_server] version 12.7.0
-[2019-10-13 01:07:00.751] [info] [console_user_server] receiver is initialized
-[2019-10-13 01:07:00.751] [info] [console_user_server] receiver: bound
-[2019-10-13 01:07:00.752] [info] [console_user_server] grabber_client is started.
-[2019-10-13 01:07:00.752] [info] [console_user_server] grabber_client is connected.
-[2019-10-13 01:07:00.964] [info] [console_user_server] core_configuration is updated.
-[2019-10-13 01:07:01.063] [info] [console_user_server] Check for updates...
-[2019-10-13 01:16:33.042] [info] [console_user_server] Load /Users/sam/.config/karabiner/karabiner.json...
-[2019-10-13 01:16:33.047] [info] [console_user_server] core_configuration is updated.
