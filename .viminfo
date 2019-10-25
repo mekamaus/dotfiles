@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-|2,0,1571989008,,"wq"
+|2,0,1571989089,,"wq"
 :w
 |2,0,1571988759,,"w"
 
@@ -30,28 +30,36 @@
 |3,1,36,0,1,0,1571968105,"	"
 
 # File marks:
-'0  8  6  ~/.gitignore
-|4,48,8,6,1571989008,"~/.gitignore"
-'1  5  0  ~/.git/MERGE_MSG
-|4,49,5,0,1571988608,"~/.git/MERGE_MSG"
-'2  22  5  ~/.gitignore
-|4,50,22,5,1571968215,"~/.gitignore"
-'3  22  5  ~/.gitignore
-|4,51,22,5,1571968215,"~/.gitignore"
-'4  22  0  ~/.gitignore
-|4,52,22,0,1571968107,"~/.gitignore"
-'5  22  0  ~/.gitignore
-|4,53,22,0,1571968107,"~/.gitignore"
-'6  20  3  ~/.gitignore
-|4,54,20,3,1571968078,"~/.gitignore"
-'7  20  3  ~/.gitignore
-|4,55,20,3,1571968078,"~/.gitignore"
-'8  20  3  ~/.gitignore
-|4,56,20,3,1571968078,"~/.gitignore"
-'9  20  3  ~/.gitignore
-|4,57,20,3,1571968078,"~/.gitignore"
+'0  9  9  ~/.gitignore
+|4,48,9,9,1571989089,"~/.gitignore"
+'1  8  6  ~/.gitignore
+|4,49,8,6,1571989008,"~/.gitignore"
+'2  8  6  ~/.gitignore
+|4,50,8,6,1571989008,"~/.gitignore"
+'3  5  0  ~/.git/MERGE_MSG
+|4,51,5,0,1571988608,"~/.git/MERGE_MSG"
+'4  22  5  ~/.gitignore
+|4,52,22,5,1571968215,"~/.gitignore"
+'5  22  5  ~/.gitignore
+|4,53,22,5,1571968215,"~/.gitignore"
+'6  22  5  ~/.gitignore
+|4,54,22,5,1571968215,"~/.gitignore"
+'7  22  5  ~/.gitignore
+|4,55,22,5,1571968215,"~/.gitignore"
+'8  22  0  ~/.gitignore
+|4,56,22,0,1571968107,"~/.gitignore"
+'9  22  0  ~/.gitignore
+|4,57,22,0,1571968107,"~/.gitignore"
 
 # Jumplist (newest first):
+-'  9  9  ~/.gitignore
+|4,39,9,9,1571989089,"~/.gitignore"
+-'  10  0  ~/.gitignore
+|4,39,10,0,1571989071,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1571989071,"~/.gitignore"
+-'  8  6  ~/.gitignore
+|4,39,8,6,1571989008,"~/.gitignore"
 -'  8  6  ~/.gitignore
 |4,39,8,6,1571989008,"~/.gitignore"
 -'  1  0  ~/.gitignore
@@ -62,10 +70,20 @@
 |4,39,5,0,1571988608,"~/.git/MERGE_MSG"
 -'  5  0  ~/.git/MERGE_MSG
 |4,39,5,0,1571988608,"~/.git/MERGE_MSG"
+-'  5  0  ~/.git/MERGE_MSG
+|4,39,5,0,1571988608,"~/.git/MERGE_MSG"
+-'  5  0  ~/.git/MERGE_MSG
+|4,39,5,0,1571988608,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1571988602,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1571988602,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1571988602,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1571988602,"~/.git/MERGE_MSG"
+-'  22  5  ~/.gitignore
+|4,39,22,5,1571968215,"~/.gitignore"
 -'  22  5  ~/.gitignore
 |4,39,22,5,1571968215,"~/.gitignore"
 -'  22  5  ~/.gitignore
@@ -84,6 +102,8 @@
 |4,39,1,0,1571968096,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1571968096,"~/.gitignore"
+-'  20  3  ~/.gitignore
+|4,39,20,3,1571968078,"~/.gitignore"
 -'  20  3  ~/.gitignore
 |4,39,20,3,1571968078,"~/.gitignore"
 -'  20  3  ~/.gitignore
@@ -120,6 +140,10 @@
 |4,39,19,9,1571967994,"~/.gitignore"
 -'  19  9  ~/.gitignore
 |4,39,19,9,1571967994,"~/.gitignore"
+-'  19  9  ~/.gitignore
+|4,39,19,9,1571967994,"~/.gitignore"
+-'  6  0  ~/.gitignore
+|4,39,6,0,1571967987,"~/.gitignore"
 -'  6  0  ~/.gitignore
 |4,39,6,0,1571967987,"~/.gitignore"
 -'  6  0  ~/.gitignore
@@ -142,30 +166,6 @@
 |4,39,1,0,1571967985,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1571967985,"~/.gitignore"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
--'  9  44  ~/.git/config
-|4,39,9,44,1571967728,"~/.git/config"
 -'  9  44  ~/.git/config
 |4,39,9,44,1571967728,"~/.git/config"
 -'  9  44  ~/.git/config
@@ -256,10 +256,10 @@
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	*	1571989007	0
-	"	8	6
-	^	8	7
-	.	7	3
+	*	1571989088	0
+	"	9	9
+	^	9	10
+	.	9	9
 	+	19	9
 	+	20	3
 	+	21	15
@@ -267,6 +267,8 @@
 	+	10	0
 	+	8	7
 	+	7	3
+	+	8	7
+	+	9	9
 
 > ~/.git/MERGE_MSG
 	*	1571988607	0
