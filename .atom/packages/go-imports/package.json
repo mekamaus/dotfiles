@@ -1,0 +1,45 @@
+{
+  "_from": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball",
+  "_id": "go-imports@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-HJrrghPY6YMkaAmp71/9X+eFNSYriPJ19IczZjJpH3MWper5WvPav3MiR6LhdY67JjmiPfWAO++mYjktgX1ftg==",
+  "_location": "/go-imports",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball",
+  "_shasum": "b40a019656af849c6fba6c930300d7d55b693d2b",
+  "_spec": "https://www.atom.io/api/packages/go-imports/versions/0.2.0/tarball",
+  "_where": "/private/var/folders/rj/8wtdjs_13p78_n5j76lysy740000gn/T/apm-install-dir-119925-80010-15mo63s.1nu9",
+  "activationCommands": {
+    "atom-workspace": "go-imports:process"
+  },
+  "bugs": {
+    "url": "https://github.com/abiosoft/atom-go-imports/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Auto import Go packages via the goimports command line tool",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/abiosoft/atom-go-imports#readme",
+  "license": "MIT",
+  "main": "./lib/go-imports",
+  "name": "go-imports",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abiosoft/atom-go-imports.git"
+  },
+  "version": "0.2.0"
+}
