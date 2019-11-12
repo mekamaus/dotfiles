@@ -1,10 +1,11 @@
 .CFUserTextEncoding
-**/.DS_Store
-.bash-preexec.sh
-.bash_history
-.git-credentials
-.gitconfig
-.viminfo
+.DS_Store
 */*
+.*
+!/.gitignore
+!/.inputrc
+!/.tmux.conf
+!/.vimrc
+!/.bash_profile
 !.atom/*
 !.config/*
