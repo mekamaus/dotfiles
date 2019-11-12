@@ -1,5 +1,5 @@
 .CFUserTextEncoding
-.DS_Store
+**/.DS_Store
 .bash-preexec.sh
 .bash_history
 .git-credentials
