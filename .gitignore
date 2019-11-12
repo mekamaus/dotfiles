@@ -1,11 +1,9 @@
-.CFUserTextEncoding
-.DS_Store
 */*
+!.atom/*
+!.config/*
 .*
 !/.gitignore
 !/.inputrc
 !/.tmux.conf
 !/.vimrc
 !/.bash_profile
-!.atom/*
-!.config/*
