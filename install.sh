@@ -37,3 +37,6 @@ rm ~/.vimrc; ln -s "$base_dir/.vimrc" ~/.vimrc 2> /dev/null
 rm ~/.zshrc; ln -s "$base_dir/.zshrc" ~/.zshrc 2> /dev/null
 rm ~/.zsh-fixed-prompt.sh; ln -s "$base_dir/.zsh-fixed-prompt.sh" ~/.zsh-fixed-prompt.sh 2> /dev/null
 
+# vim setup
+vim -c ':PluginInstall'
+
