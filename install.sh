@@ -21,10 +21,11 @@ git clone "$zsh_autosuggestions_git" "$zsh_autosuggestions_dest" 2> /dev/null
 git clone "$zsh_sh_git" "$zsh_sh_dest" 2> /dev/null
 
 base_dir="$(dirname "$0")"
-ln -s "$base_dir/.inputrc" ~/.inputrc 2> /dev/null
-ln -s "$base_dir/.p10k.zsh" ~/.p10k.zsh 2> /dev/null
-ln -s "$base_dir/.tmux.conf" ~/.tmux.conf 2> /dev/null
-ln -s "$base_dir/.tmux.conf.local" ~/.tmux.conf.local 2> /dev/null
-ln -s "$base_dir/.vimrc" ~/.vimrc 2> /dev/null
-ln -s "$base_dir/.zshrc" ~/.zshrc 2> /dev/null
+rm ~/.inputrc; ln -s "$base_dir/.inputrc" ~/.inputrc 2> /dev/null
+rm ~/.p10k.zsh; ln -s "$base_dir/.p10k.zsh" ~/.p10k.zsh 2> /dev/null
+rm ~/.tmux.conf; ln -s "$base_dir/.tmux.conf" ~/.tmux.conf 2> /dev/null
+rm ~/.tmux.conf.local; ln -s "$base_dir/.tmux.conf.local" ~/.tmux.conf.local 2> /dev/null
+rm ~/.vimrc; ln -s "$base_dir/.vimrc" ~/.vimrc 2> /dev/null
+rm ~/.zshrc; ln -s "$base_dir/.zshrc" ~/.zshrc 2> /dev/null
+rm ~/.zsh-fixed-prompt.sh; ln -s "$base_dir/.zsh-fixed-prompt.sh" ~/.zsh-fixed-prompt.sh 2> /dev/null
 
