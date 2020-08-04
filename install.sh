@@ -10,7 +10,7 @@ zsh_plugins="$zsh_custom/plugins"
 omz_install="$gh_raw/ohmyzsh/ohmyzsh/master/tools/install.sh"
 
 vundle_git="$gh/VundleVim/Vundle.vim.git"
-vundle_dest="~/.vim/bundle/Vundle.vim"
+vundle_dest="$HOME/.vim/bundle/Vundle.vim"
 
 base_dir="$(dirname "$0")"
 
@@ -27,12 +27,12 @@ zsh_plugin() {
 }
 
 symlink() {
-  rm "~/$1"
-  ln -s "$base_dir/$1" "~/$1"
+  [[ -d "$HOME/$1" ]] && rm "$HOME/$1"
+  ln -s "$base_dir/$1" "$HOME/$1"
 }
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL "$omz_install")"
+[[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL "$omz_install")"
 
 # zsh themes
 zsh_theme 'romkatv/powerlevel10k'
@@ -54,5 +54,5 @@ symlink .zshrc
 symlink .zsh-fixed-prompt.sh
 
 # vim setup
-vim -c ':PluginInstall'
+vim -c 'PluginInstall' -c 'qa!'
 

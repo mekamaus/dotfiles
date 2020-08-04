@@ -75,7 +75,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting tmux)
+
+ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_ITERM2=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,12 +116,6 @@ bindkey -v
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-workspace=dev
-tmux has-session -t $workspace
-[ $? != 0 ] && tmux new-session -s $workspace
-[ "$TERM" != "screen" ] || [ -z "$TMUX" ] && tmux attach -t $workspace
-#echo "Failed to start tmux"
 
 # Search history
 bindkey "^R" history-incremental-search-backward
