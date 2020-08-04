@@ -9,3 +9,5 @@
 !/.tmux.conf
 !/.vimrc
 !/.bash_profile
+!/.p10k.zsh
+!/.install.sh
