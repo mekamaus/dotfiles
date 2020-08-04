@@ -27,8 +27,7 @@ zsh_plugin() {
 }
 
 symlink() {
-  [[ -d "$HOME/$1" ]] && rm "$HOME/$1"
-  ln -s "$base_dir/$1" "$HOME/$1"
+  ln -sf "$base_dir/$1" "$HOME/$1"
 }
 
 # install oh-my-zsh
@@ -42,7 +41,7 @@ zsh_plugin 'zsh-users/zsh-autosuggestions'
 zsh_plugin 'zsh-users/zsh-syntax-highlighting'
 
 # vim
-git clone "$vundle_git" "$vundle_dest"
+[[ -d "$vundle_dest" ]] || git clone "$vundle_git" "$vundle_dest"
 
 # symlinks
 symlink .inputrc
