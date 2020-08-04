@@ -20,3 +20,11 @@ git clone --depth=1 "$p10k_git" "$p10k_dest"
 git clone "$zsh_autosuggestions_git" "$zsh_autosuggestions_dest"
 git clone "$zsh_sh_git" "$zsh_sh_dest"
 
+base_dir="$(dirname "$0")"
+ln -s "$base_dir/.inputrc" ~/.inputrc
+ln -s "$base_dir/.p10k.zsh" ~/.p10k.zsh
+ln -s "$base_dir/.tmux.conf" ~/.tmux.conf
+ln -s "$base_dir/.tmux.conf.local" ~/.tmux.conf.local
+ln -s "$base_dir/.vimrc" ~/.vimrc
+ln -s "$base_dir/.zshrc" ~/.zshrc
+
