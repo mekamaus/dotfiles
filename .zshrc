@@ -112,7 +112,26 @@ alias e="$EDITOR"
 # Set vi mode
 bindkey -v
 
-. ~/.zsh-fixed-prompt.sh
+# Fix prompt at bottom
+#CLEAR_OUTPUT=false
+EMPTY_CLEARS_OUTPUT=true
+#SHOW_COMMAND=true
+PROMPT_PADDING_BOTTOM=1
+__cmd=false
+preexec() {
+  # indicate that a command was entered
+  __cmd=true
+}
+precmd() {
+  # clear output if enter was pressed with no command
+  if [[ "$__cmd" != true ]] && [[ "$EMPTY_CLEARS_OUTPUT" = true ]]; then
+    tput reset
+    [[ "$TERM" = screen* ]] && [ -n "$TMUX" ] && tmux clear-history
+    tput cup $((LINES-3))
+  fi
+  __cmd=false
+}
+tput cup $((LINES-2))
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

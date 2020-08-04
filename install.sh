@@ -51,7 +51,6 @@ symlink .tmux.conf
 symlink .tmux.conf.local
 symlink .vimrc
 symlink .zshrc
-symlink .zsh-fixed-prompt.sh
 
 # vim setup
 vim -c 'PluginInstall' -c 'qa!'
