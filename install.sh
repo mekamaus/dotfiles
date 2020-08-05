@@ -26,8 +26,8 @@ zsh_plugin() {
   [[ -d $dest ]] || git clone "$git" "$dest"
 }
 
-symlink() {
-  ln -sf "$base_dir/$1" "$HOME/$1"
+copy_home() {
+  cp -f "$base_dir/$1" "$HOME/$1"
 }
 
 # install oh-my-zsh
@@ -44,12 +44,12 @@ zsh_plugin 'zsh-users/zsh-syntax-highlighting'
 [[ -d "$vundle_dest" ]] || git clone "$vundle_git" "$vundle_dest"
 
 # symlinks
-symlink .inputrc
-symlink .p10k.zsh
-symlink .tmux.conf
-symlink .tmux.conf.local
-symlink .vimrc
-symlink .zshrc
+copy_home .inputrc
+copy_home .p10k.zsh
+copy_home .tmux.conf
+copy_home .tmux.conf.local
+copy_home .vimrc
+copy_home .zshrc
 
 # vim setup
 vim -c 'PluginInstall' -c 'qa!'
