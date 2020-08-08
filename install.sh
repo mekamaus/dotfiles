@@ -52,5 +52,8 @@ copy_home .vimrc
 copy_home .zshrc
 
 # vim setup
-vim -c 'PluginInstall' -c 'qa!'
+vim +PluginInstall +qall
+
+# YouCompleteMe setup
+~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 

@@ -13,12 +13,15 @@ call vundle#begin()
   Plugin 'google/vim-maktaba'
   Plugin 'google/vim-codefmt'
   Plugin 'junegunn/fzf.vim'
-  Plugin 'ryanoasis/vim-devicons'
+  Plugin 'majutsushi/tagbar'
   Plugin 'mhinz/vim-signify'
+  Plugin 'ryanoasis/vim-devicons'
   Plugin 'preservim/nerdtree'
-  Plugin 'xuyuanp/nerdtree-git-plugin'
-"  Plugin 'ycm-core/YouCompleteMe'
+  Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
+
+" Disable YCM preview window
+set completeopt-=preview
 
 set encoding=utf8
 set guifont=MesloLGS\ NF:h14
@@ -62,12 +65,6 @@ nnoremap <leader>9 9gt
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 nnoremap tn :tabnew<CR>
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
 
 " NERDTree config
 autocmd StdinReadPre * let s:std_in=1
@@ -132,3 +129,14 @@ if expand('%:t') =~?'bash-fc-\d\+'
 endif
 
 set rtp+=/usr/local/opt/fzf
+
+noremap <leader>cf :pyf /usr/local/opt/llvm/bin/clang-include-fixer<cr>
+let g:clang_include_fixer_path = "/usr/local/opt/llvm/bin/clang-include-fixer"
+
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
+
+let g:ycm_semantic_triggers = {
+      \   'c': ['.', '->', 're!\w{1}'],
+      \ }
+
+set pumheight=8
