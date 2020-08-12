@@ -57,3 +57,7 @@ vim +PluginInstall +qall
 # YouCompleteMe setup
 ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 
+# Install zplug
+zplug_installer="https://raw.githubusercontent.com/zplug/installer/master/installer.zsh"
+curl -sL --proto-redir -all,https $zplug_installer | zsh
+

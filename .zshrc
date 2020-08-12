@@ -99,6 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export EDITOR=vim
+export VISUAL=vim
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -131,7 +134,7 @@ precmd() {
   fi
   __cmd=false
 }
-tput cup $((LINES-2))
+tput cup $((LINES-1))
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -139,10 +142,6 @@ tput cup $((LINES-2))
 # Search history
 bindkey "^R" history-incremental-search-backward
 
-alias please=sudo
-
-export EDITOR=vim
-export VISUAL=vim
 #export GOPATH=$HOME/go-code
 #export PATH="$PATH:$GOPATH/bin"
 #export PATH="$PATH:$HOME/go/bin"
@@ -181,5 +180,8 @@ export FZF_DEFAULT_COMMAND="fd . $GOPATH $HOME/fievel $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $GOPATH $HOME/fievel $HOME"
 
+if [ -f ${HOME}/.zplug/init.zsh ]; then
+  source ${HOME}/.zplug/init.zsh
+fi
 zplug 'ytet5uy4/fzf-widgets'
 
