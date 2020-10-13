@@ -40,7 +40,7 @@ zsh_theme 'romkatv/powerlevel10k'
 zsh_plugin 'zsh-users/zsh-autosuggestions'
 zsh_plugin 'zsh-users/zsh-syntax-highlighting'
 
-# vim
+# vundle
 [[ -d "$vundle_dest" ]] || git clone "$vundle_git" "$vundle_dest"
 
 # symlinks

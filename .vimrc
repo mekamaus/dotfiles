@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "  Plugin 'govim/govim'
-  Plugin 'christoomey/vim-tmux-navigator'
+  Plugin 'c.vim'
   Plugin 'solarnz/thrift.vim'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
@@ -14,11 +14,21 @@ call vundle#begin()
   Plugin 'google/vim-codefmt'
   Plugin 'junegunn/fzf.vim'
   Plugin 'majutsushi/tagbar'
-  Plugin 'mhinz/vim-signify'
   Plugin 'ryanoasis/vim-devicons'
   Plugin 'preservim/nerdtree'
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'w0ng/vim-hybrid'
+  Plugin 'nanotech/jellybeans.vim'
+  Plugin 'tpope/vim-eunuch'
+  Plugin 'christoomey/vim-tmux-navigator'
+  Plugin 'scrooloose/syntastic'
 call vundle#end()
+
+"set background=dark
+colorscheme ron
+"let g:jellybeans_overrides = {
+"  \    'MatchParen': { 'guifg': 'ffffff', 'guibg': '556779' },
+"  \}
 
 " Disable YCM preview window
 set completeopt-=preview
@@ -32,7 +42,7 @@ let g:airline_powerline_fonts = 1
 
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType c,cc,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
@@ -43,13 +53,6 @@ augroup autoformat_settings
 augroup END
 
 " Signify (Git gutter) config
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_removed = ''
-"let g:gitgutter_sign_removed_first_line = '^^'
-"let g:gitgutter_sign_removed_above_and_below = '{'
-"let g:gitgutter_sign_modified_removed = 'ww'
-"let g:gitgutter_highlight_lines = 1 
 set updatetime=100
 
 " Tab shortcuts
@@ -68,7 +71,7 @@ nnoremap tn :tabnew<CR>
 
 " NERDTree config
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen = 1
@@ -118,11 +121,13 @@ set colorcolumn=80
 
 set clipboard=unnamed
 
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 
 let g:go_debug=['shell_commands']
 
-let g:ycm_clangd_binary_path = "/usr/local/bin/clangd"
+"let g:ycm_clangd_binary_path = '/usr/local/bin/clangd'
+
+let g:C_Ctrl_j = 'off'
 
 if expand('%:t') =~?'bash-fc-\d\+'
   setfiletype sh
@@ -131,12 +136,26 @@ endif
 set rtp+=/usr/local/opt/fzf
 
 noremap <leader>cf :pyf /usr/local/opt/llvm/bin/clang-include-fixer<cr>
-let g:clang_include_fixer_path = "/usr/local/opt/llvm/bin/clang-include-fixer"
+let g:clang_include_fixer_path = '/usr/local/opt/llvm/bin/clang-include-fixer'
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 let g:ycm_semantic_triggers = {
       \   'c': ['.', '->', 're!\w{1}'],
       \ }
+let g:ycm_always_populate_location_list = 1
 
 set pumheight=8
+
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+let g:ctrlp_use_caching = 0
+
+nnoremap <leader>fi :YcmCompleter FixIt<CR>
+
+set foldmethod=syntax
+set foldlevel=99
+
+let g:syntastic_cpp_compiler = "gcc"
+let g:syntastic_cpp_compiler_options = "-std=c++17 -Wall -Wextra -Wpedantic"
+

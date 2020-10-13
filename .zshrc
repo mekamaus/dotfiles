@@ -70,6 +70,8 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_AUTOSUGGEST_STRATEGY=(completion)
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -130,7 +132,7 @@ precmd() {
   if [[ "$__cmd" != true ]] && [[ "$EMPTY_CLEARS_OUTPUT" = true ]]; then
     tput reset
     [[ "$TERM" = screen* ]] && [ -n "$TMUX" ] && tmux clear-history
-    tput cup $((LINES-3))
+    tput cup $((LINES-2))
   fi
   __cmd=false
 }
@@ -142,7 +144,7 @@ tput cup $((LINES-1))
 # Search history
 bindkey "^R" history-incremental-search-backward
 
-#export GOPATH=$HOME/go-code
+export GOPATH=$HOME/gocode
 #export PATH="$PATH:$GOPATH/bin"
 #export PATH="$PATH:$HOME/go/bin"
 #export GOROOT="/usr/local/Cellar/go/1.14.2_1/libexec"
@@ -185,3 +187,14 @@ if [ -f ${HOME}/.zplug/init.zsh ]; then
 fi
 zplug 'ytet5uy4/fzf-widgets'
 
+echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
+eval "$(direnv hook zsh)"
+
+/usr/libexec/java_home -v 1.8
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+setopt noincappendhistory
+setopt nosharehistory
+
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
