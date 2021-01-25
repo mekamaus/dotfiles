@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/samwise/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -144,17 +144,6 @@ tput cup $((LINES-1))
 # Search history
 bindkey "^R" history-incremental-search-backward
 
-export GOPATH=$HOME/gocode
-#export PATH="$PATH:$GOPATH/bin"
-#export PATH="$PATH:$HOME/go/bin"
-#export GOROOT="/usr/local/Cellar/go/1.14.2_1/libexec"
-#export GOMOD=""
-export UBER_HOME=$HOME/Uber
-export GO111MODULE=off
-
-echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
-eval "$(direnv hook zsh)"
-
 # Do menu-driven completion.
 zstyle ':completion:*' menu select
 
@@ -186,12 +175,6 @@ if [ -f ${HOME}/.zplug/init.zsh ]; then
   source ${HOME}/.zplug/init.zsh
 fi
 zplug 'ytet5uy4/fzf-widgets'
-
-echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
-eval "$(direnv hook zsh)"
-
-/usr/libexec/java_home -v 1.8
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 setopt noincappendhistory
 setopt nosharehistory
