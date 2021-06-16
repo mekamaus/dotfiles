@@ -6,7 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/bin:/usr/local/bin:$PATH
+export PATH=$HOME/Library/Python/3.8/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,7 +80,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(completion)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting tmux)
 
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_ITERM2=true
 
 source $ZSH/oh-my-zsh.sh
@@ -165,11 +166,10 @@ zstyle ':completion:*:*:sstrans*:*' file-patterns '*.(lst|clst)'
 zstyle ':completion:*:*:ssnorm*:*' file-patterns '*.tsv'
 # ...
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND="fd . $GOPATH $HOME/fievel $HOME"
+export FZF_DEFAULT_COMMAND="fdfind . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d . $GOPATH $HOME/fievel $HOME"
+export FZF_ALT_C_COMMAND="fdfind -t d . $HOME"
 
 if [ -f ${HOME}/.zplug/init.zsh ]; then
   source ${HOME}/.zplug/init.zsh
@@ -179,5 +179,40 @@ zplug 'ytet5uy4/fzf-widgets'
 setopt noincappendhistory
 setopt nosharehistory
 
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+alias python=python3
+alias pip=pip3
+
+alias c="xclip -selection clipboard"
+alias v="xclip -selection clipboard -o"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source <(kubectl completion zsh)
+
+alias find-gpu='ps aux | grep gpu-process | grep'
+
+function kill-gpu() {
+  find-gpu $1 | egrep -o -e "[0-9]+" | head -n 1 | xargs -p kill
+}
+
+alias yapf=yapf3
+
+connect() {
+  killall openconnect && openconnect --background --authgroup Employee "https://ngvpn${1}.nvidia.com"
+}
+
+export -f connect
+
+eval `keychain --agents ssh --eval id_rsa`
+
+ranger_browse() {
+  echo
+  ranger --choosedir=$HOME/.rangerdir < $TTY
+  LASTDIR=`cat $HOME/.rangerdir`
+  cd "$LASTDIR"
+  zle reset-prompt
+}
+zle -N ranger_browse
+bindkey '^f' ranger_browse
