@@ -12,6 +12,8 @@ omz_install="$gh_raw/ohmyzsh/ohmyzsh/master/tools/install.sh"
 vundle_git="$gh/VundleVim/Vundle.vim.git"
 vundle_dest="$HOME/.vim/bundle/Vundle.vim"
 
+zplug_installer="https://raw.githubusercontent.com/zplug/installer/master/installer.zsh"
+
 base_dir="$(dirname "$0")"
 
 zsh_theme() {
@@ -55,9 +57,8 @@ copy_home .zshrc
 vim +PluginInstall +qall
 
 # YouCompleteMe setup
-~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
 # Install zplug
-zplug_installer="https://raw.githubusercontent.com/zplug/installer/master/installer.zsh"
 curl -sL --proto-redir -all,https $zplug_installer | zsh
 
