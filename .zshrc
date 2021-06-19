@@ -78,7 +78,13 @@ ZSH_AUTOSUGGEST_STRATEGY=(completion)
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting tmux)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    tmux
+    zsh-vi-mode
+)
 
 #ZSH_TMUX_AUTOSTART=true
 #ZSH_TMUX_ITERM2=true
